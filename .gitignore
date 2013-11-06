@@ -1,11 +1,12 @@
-punisher-server/.classpath
-punisher-server/.project
-punisher-server/.settings/ccw.repl.cmdhistory.prefs
+.classpath
+.project
+.settings/ccw.repl.cmdhistory.prefs
 .vagrant
 vagrant_ansible_inventory_badguy
-**/.DS_Store
+.DS_Store
 .idea
 *.iml
 *.swp
 .nrepl*
-**/.lein*
+.lein*
+target/*
