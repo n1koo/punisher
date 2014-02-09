@@ -20,8 +20,7 @@
 (defn index-page []
   (html5
     [:head
-     [:title "Solita Punisher"]
-     (include-css "/css/style.css")]
+     [:title "Solita Punisher"]]
     [:body]
     [:h1 "Punisher"]
     [:table {:border "1"}
