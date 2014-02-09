@@ -10,7 +10,7 @@
         as (map history-entry hist)]
      as))
 (defn history-list [client]
-  "Kerätään yksittäinen lista aina"
+  "Single list collecting"
   (let [created_at (:CREATED_AT client)
         script (:SCRIPT client)
         clientid (:CLIENTID client)
@@ -20,8 +20,7 @@
 (defn index-page []
   (html5
     [:head
-     [:title "Solita Punisher"]
-     (include-css "/css/style.css")]
+     [:title "Solita Punisher"]]
     [:body]
     [:h1 "Punisher"]
     [:table {:border "1"}
@@ -33,5 +32,5 @@
   {
     :status 200
     :headers {"Content-Type" "text/plain"}
-    :body (str "curl -s http://" (:server-name request) ":" (:server-port request) "/punish/api/v1/?client-id=`hostname |sha1sum |cut -d' ' -f1`")
+    :body (str "curl -s http://" (:server-name request) ":" (:server-port request) "/punish/api/v1/?client-id=`hostname |if [ ! `which sha1sum` ]; then sha1sum; else shasum; fi |cut -d' ' -f1`")
     })
