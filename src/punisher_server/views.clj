@@ -10,7 +10,7 @@
         as (map history-entry hist)]
      as))
 (defn history-list [client]
-  "Kerätään yksittäinen lista aina"
+  "Single list collecting"
   (let [created_at (:CREATED_AT client)
         script (:SCRIPT client)
         clientid (:CLIENTID client)
