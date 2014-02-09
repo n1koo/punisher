@@ -1,16 +1,22 @@
 (ns punisher-server.punisher-history
-  (require [clj-time.core :as time]))
+  (:use [korma.db]
+        [korma.core])
+  (:require [clj-time.core :as time]
+            [clj-time.coerce :as joda]))
 
-(def history (atom {}))
+(defdb mydb (h2 {:db "resources/history"
+                 :user "sa"
+                 :password ""
+                 :naming {:fields clojure.string/upper-case}}))
+
+(defentity history)
 
 (defn add-execution [client script]
-  (let [entry {:script script :timestamp (time/now)}]
-    (swap! history #(assoc %
-                           (keyword client)
-                           (conj ((keyword client) %) entry)))))
+  (insert history
+          (values {:clientid client :script (.getName script)})))
 
 (defn client-history [client]
   ((keyword client) @history))
 
 (defn all-history []
-  @history)
+  (select history (order :ID :DESC)))

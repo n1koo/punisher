@@ -10,3 +10,4 @@ vagrant_ansible_inventory_badguy
 .nrepl*
 .lein*
 target/*
+resources/*.db

@@ -9,12 +9,13 @@
   (let [_ (println hist)
         as (map history-entry hist)]
      as))
-
-(defn history-html [history-entrys]
-  (let [client (first history-entrys)
-        entrys (second history-entrys)
-        ehh (entry-history entrys)]
-    (str client " " ( into [] ehh))))
+(defn history-list [client]
+  "Kerätään yksittäinen lista aina"
+  (let [created_at (:CREATED_AT client)
+        script (:SCRIPT client)
+        clientid (:CLIENTID client)
+        ]
+      [:tr [:td created_at][:td clientid][:td script]]))
 
 (defn index-page []
   (html5
@@ -23,4 +24,14 @@
      (include-css "/css/style.css")]
     [:body]
     [:h1 "Punisher"]
-    [:h4 (map history-html (all-history))]))
+    [:table {:border "1"}
+     [:tr [:th "Created"][:th "Client ID"][:th "Script"]]
+      (map #(history-list %) (all-history))]))
+
+
+(defn install-page [request]
+  {
+    :status 200
+    :headers {"Content-Type" "text/plain"}
+    :body (str "curl -s http://" (:server-name request) ":" (:server-port request) "/punish/api/v1/?client-id=`hostname |sha1sum |cut -d' ' -f1`")
+    })

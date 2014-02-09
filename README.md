@@ -1,19 +1,13 @@
-# punisher-server
+# punisher
+## Server install
 
-FIXME
+    $ lein migrate
 
-## Prerequisites
+* Start server
 
-You will need [Leiningen][1] 1.7.0 or above installed.
+    $ lein ring server
 
-[1]: https://github.com/technomancy/leiningen
 
-## Running
+## Client
 
-To start a web server for the application, run:
-
-    lein ring server
-
-## License
-
-Copyright © 2013 FIXME
+    $ curl http://<backend hostname>:<backend port>/client |bash
