@@ -32,5 +32,5 @@
   {
     :status 200
     :headers {"Content-Type" "text/plain"}
-    :body (str "curl -s http://" (:server-name request) ":" (:server-port request) "/punish/api/v1/?client-id=`hostname |sha1sum |cut -d' ' -f1`")
+    :body (str "curl -s http://" (:server-name request) ":" (:server-port request) "/punish/api/v1/?client-id=`hostname |shasum |cut -d' ' -f1`")
     })
