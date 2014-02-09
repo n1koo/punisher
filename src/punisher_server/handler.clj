@@ -8,8 +8,8 @@
            [punisher-server.scripts :as script]))
 
 (defn get-punish [params]
-  (let [script (:script (rand-nth script/all-scripts))
-        client (:client-id params)
+  (let [client (:client-id params)
+        script (:script (rand-nth (into [] (clojure.set/select #(= (:level %) 1) script/all-scripts))))
         _ (h/add-execution client script)]
     (if (:client-id params)
       script
@@ -17,7 +17,7 @@
 
 (defroutes app-routes
            (context "/punish/api" {params :params} (defroutes punish-routes
-                                                              (GET "/v1/" [] (get-punish params))))
+                                                     (GET "/v1/" [] (get-punish params))))
            (GET "/" [] (index-page))
            (GET "/client" request (install-page request false))
            (GET "/client/debug" request (install-page request true))

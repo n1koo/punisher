@@ -15,8 +15,5 @@
   (insert history
           (values {:clientid client :script script})))
 
-(defn client-history [client]
-  ((keyword client) @history))
-
 (defn all-history []
   (select history (order :ID :DESC)))
