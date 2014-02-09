@@ -10,3 +10,4 @@
 target
 resources/*.db
 .vagrant
+.tags
