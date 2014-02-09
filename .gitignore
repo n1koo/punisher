@@ -1,8 +1,6 @@
 .classpath
 .project
 .settings/ccw.repl.cmdhistory.prefs
-.vagrant
-vagrant_ansible_inventory_badguy
 .DS_Store
 .idea
 *.iml
