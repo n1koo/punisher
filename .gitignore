@@ -9,3 +9,4 @@
 .lein*
 target
 resources/*.db
+.vagrant
