@@ -1,5 +1,7 @@
 # Punisher
 
+Catastrophe testing tool
+
 ## Server
 
 ### Server install
