@@ -1,9 +1,12 @@
 # punisher
-## Server install
+
+## Server
+
+### Server install
 
     $ lein migrate
 
-* Start server
+### Start server
 
     $ lein ring server
 
