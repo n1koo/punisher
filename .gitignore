@@ -7,5 +7,6 @@
 *.swp
 .nrepl*
 .lein*
-target/*
+target
 resources/*.db
+.vagrant
