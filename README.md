@@ -1,6 +1,6 @@
 # Punisher
 
-Catastrophe testing tool
+Disaster testing tool
 
 ## Server
 
