@@ -9,5 +9,5 @@ vagrant_ansible_inventory_badguy
 *.swp
 .nrepl*
 .lein*
-target/*
+target
 resources/*.db
