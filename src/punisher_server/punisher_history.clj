@@ -13,7 +13,7 @@
 
 (defn add-execution [client script]
   (insert history
-          (values {:clientid client :script (.getName script)})))
+          (values {:clientid client :script script})))
 
 (defn client-history [client]
   ((keyword client) @history))

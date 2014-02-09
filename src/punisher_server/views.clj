@@ -28,9 +28,16 @@
       (map #(history-list %) (all-history))]))
 
 
-(defn install-page [request]
+(defn install-page
+  ([request] (install-page [request false]))
+  ([request debug]
   {
     :status 200
     :headers {"Content-Type" "text/plain"}
-    :body (str "curl -s http://" (:server-name request) ":" (:server-port request) "/punish/api/v1/?client-id=`hostname |if [ ! `which sha1sum` ]; then sha1sum; else shasum; fi |cut -d' ' -f1`")
-    })
+    :body (str "curl -s http://"
+            (:server-name request)
+            ":"
+            (:server-port request)
+            "/punish/api/v1/?client-id=`hostname | (sha1sum || shasum ) |cut -d' ' -f1`"
+            (if-not debug "|bash"))
+    }))
