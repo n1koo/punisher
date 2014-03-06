@@ -1,8 +1,9 @@
 # Punisher
 
+** DON'T USE IT IN YOUR OWN COMPUTER! **
+
 Disaster testing tool
 
-* DON'T USE IT IN YOUR OWN COMPUTER! *
 
 ## Server
 
