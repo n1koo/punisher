@@ -1,8 +1,16 @@
 # Punisher
 
-__DON'T USE IT IN YOUR OWN COMPUTER!__
+__DON'T USE IT IN YOUR OWN COMPUTER! AND DON'T RUN IT IN PRODUCTION!__
 
-Disaster testing tool
+It will diffrent type of destruction scripts, which can be found:
+https://github.com/woltage/punisher/blob/master/src/punisher_server/scripts.clj
+
+Punisher is destruction tool which breaks your infrastructure. With this you can test the diffrent types of tests:
+
+- How you Project team handles the disaster?
+- Does your monitor is corretly set up?
+- Does your clustering work if Punisher takes one node out?
+- Can you handle the destruction?
 
 
 ## Server
@@ -27,9 +35,15 @@ Start the testing environment with vagrant:
 Wait a while
 
     $ vagrant ssh
+    vagrant@vagrantbox# curl http://<backend hostname>:<backend port>/client |bash
 
-    vagrant@vagrantbox$ curl http://<backend hostname>:<backend port>/client |bash
 
+Or without vagrant, you could set it up to the cron:
+
+    # crontab -e
+    8 0 * * * /bin/sleep `/usr/bin/expr $RANDOM \% 21600`; curl http://<backend hostname>:<backend port>/client |bash
+
+    
 
 ## License
 
