@@ -2,6 +2,8 @@
 
 Disaster testing tool
 
+* DON'T USE IT IN YOUR OWN COMPUTER! *
+
 ## Server
 
 ### Server install
