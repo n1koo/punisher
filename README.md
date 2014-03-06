@@ -8,7 +8,7 @@ https://github.com/woltage/punisher/blob/master/src/punisher_server/scripts.clj
 Punisher is destruction tool which breaks your infrastructure. With this you can test the diffrent types of tests:
 
 - How you Project team handles the disaster?
-- Does your monitor is corretly set up?
+- Does your monitoring work correctly?
 - Does your clustering work if Punisher takes one node out?
 - Can you handle the destruction?
 
