@@ -22,6 +22,10 @@ For testing you need to install [Virtualbox][1] and [Vagrant][2]
 
 Server can be run anywhere, it's just a normal web server.
 
+You can create a standalone and runnable jar with:
+
+    $ lein ring uberjar
+
 ### Server installation
 
     $ lein migrate
