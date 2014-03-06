@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       node_config.vm.network :private_network, ip: node_opts[:ip]
 
       node_config.vm.provider "virtualbox" do |v|
-        v.gui = false
+        v.gui = true
         unless node_opts[:memory].nil?
           modifyvm_args = ['modifyvm', :id]
           modifyvm_args << '--memory' << node_opts[:memory].to_s
