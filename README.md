@@ -1,11 +1,13 @@
 # Punisher
 
-** DON'T USE IT IN YOUR OWN COMPUTER! **
+__DON'T USE IT IN YOUR OWN COMPUTER!__
 
 Disaster testing tool
 
 
 ## Server
+
+Server can be runned in own computer, it's just normal web server.
 
 ### Server install
 
@@ -18,7 +20,15 @@ Disaster testing tool
 
 ## Client
 
-    $ curl http://<backend hostname>:<backend port>/client |bash
+Start the testing environment with vagrant:
+    
+    $ vagrant up
+    
+Wait a while
+
+    $ vagrant ssh
+
+    vagrant@vagrantbox$ curl http://<backend hostname>:<backend port>/client |bash
 
 
 ## License
