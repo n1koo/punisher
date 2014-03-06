@@ -1,6 +1,6 @@
 # Punisher
 
-__DON'T USE IT IN YOUR OWN COMPUTER! AND DON'T RUN IT IN PRODUCTION!__
+__DON'T USE IT IN YOUR OWN COMPUTER OR IN PRODUCTION!__
 
 It will diffrent type of destruction scripts, which can be found:
 https://github.com/woltage/punisher/blob/master/src/punisher_server/scripts.clj
